@@ -1,0 +1,21 @@
+{
+  "name": "hello-world",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "start-server": "nodemon server.js",
+    "start-client": "cd client && npm start",
+    "reset-db": "psql -f db/schema.sql && psql -f db/seed.sql"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "~4.16.0",
+    "morgan": "~1.9.0",
+    "pg-promise": "^8.4.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.17.3"
+  }
+}
